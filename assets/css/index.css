@@ -1,0 +1,32 @@
+@import url("./fonts.css");
+
+* {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Mobile View */
+/* @media only screen and (max-width: 767px) { */
+
+.top-navbar,
+.currency,
+.action-btn {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.action-btn>div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.table {
+    text-align: center;
+
+    & th,
+    td {
+        vertical-align: middle;
+    }
+}
+
+/* } */

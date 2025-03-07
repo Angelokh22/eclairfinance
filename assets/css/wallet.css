@@ -1,0 +1,12 @@
+@import url("./fonts.css");
+
+* {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.top-navbar,
+.currency {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}

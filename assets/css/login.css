@@ -1,0 +1,20 @@
+@import url("./fonts.css");
+
+/* Mobile View */
+@media only screen and (max-width: 767px) {
+
+    .container {
+        width: 90% !important;
+        margin: auto;
+        transform: translateY(75%);
+        background-color: rgba(255, 255, 255, .1);
+        text-align: center;
+        border-radius: 30px;
+        padding: 5%;
+    }
+
+    img {
+        width: 80%;
+    }
+
+}

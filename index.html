@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Éclair Finance</title>
+
+
+    <link rel="stylesheet" href="./assets/css/bulma.css">
+    <link rel="stylesheet" href="./assets/css/cf.fontawesome.all.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome.all.css">
+    <link rel="stylesheet" href="./assets/css/all.css">
+    <link rel="stylesheet" href="./assets/css/sharp-thin.css">
+    <link rel="stylesheet" href="./assets/css/sharp-solid.css">
+    <link rel="stylesheet" href="./assets/css/sharp-regular.css">
+    <link rel="stylesheet" href="./assets/css/sharp-light.css">
+
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+    <!-- --bulma-scheme-main -->
+
+</head>
+
+<body>
+
+    <section class="top-navbar">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <img src="./assets/img/clair-finance-high-resolution-logo__1_-removebg-preview-resized.png" alt="">
+
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="#">
+                        <strong> <i class="fa-duotone fa-solid fa-house"></i></i> &nbsp Home</strong>
+                    </a>
+
+                    <a class="navbar-item" href="#">
+                        <strong> <i class="fa-duotone fa-solid fa-wallet"></i> &nbsp Wallet</strong>
+                    </a>
+
+                    <a class="navbar-item" href="#">
+                        <strong class="js-modal-trigger" data-target="redeem-secret"> <i
+                                class="fa-duotone fa-solid fa-lock"></i>
+                            &nbsp Redeem Secret</strong>
+                    </a>
+
+
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary">
+                                <strong>Log Out</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+
+    <section class="">
+        <div class="container">
+            <div class="total mt-5 ml-2 mb-5">
+                <p class="">Hello, <span style="color: white;"> Angelo!
+                    </span></p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="currency">
+        <div class="container">
+            <div class="total mt-5 ml-2 mb-5">
+                <p class="">Current USD value from Shares <i class="fas fa-chevron-down" style="font-size: small;"></i>
+                </p>
+                <p class="current-bal mt-2 has-text-success" style="font-size: xx-large; font-weight: 600;"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="action-btn">
+        <div class="container mt-3 mb-3">
+            <button class="button is-primary js-modal-trigger" data-target="buy-crypto-modal"><i
+                    class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp Buy</button>
+            <button class="button is-warning js-modal-trigger" data-target="sell-crypto-modal"><i
+                    class="fas fa-arrow-down"></i> &nbsp Sell</button>
+            <button class="button is-link js-modal-trigger" data-target="transfere-crypto-modal">><i
+                    class="fas fa-exchange-alt"></i> &nbsp Transfere</button>
+            <button class="button is-danger js-modal-trigger" data-target="register-game-entrance"><i
+                    class="fa-duotone fa-solid fa-gamepad"></i> &nbsp Play</button>
+        </div>
+        </div>
+    </section>
+
+    <section class="cryptos">
+        <div class="container">
+            <table class="table is-fullwidth mt-4">
+                <tbody>
+
+                    <tr>
+                        <th class="crypto-logo"><img src="./assets/img/crypto/btc.png" alt="1" width="35"></th>
+                        <td class="crypto-name">Bitcoin</td>
+                        <p class="btc-last" hidden>0</p>
+                        <td class="crypto-price has-text-danger btc-price"></td>
+                        <td class="crypto-buy-btn"><button class="button is-warning"
+                                onclick="buyCrypto(this)">Buy</button></td>
+                    </tr>
+
+                    <tr>
+                        <th class="crypto-logo"><img src="./assets/img/crypto/etherium.png" alt="2" width="35"></th>
+                        <td class="crypto-name">Etherium</td>
+                        <p class="eth-last" hidden>0</p>
+                        <td class="crypto-price has-text-danger eth-price"></td>
+                        <td class="crypto-buy-btn"><button class="button is-warning"
+                                onclick="buyCrypto(this)">Buy</button></td>
+                    </tr>
+
+                    <tr>
+                        <th class="crypto-logo"><img src="./assets/img/crypto/bnb.png" alt="3" width="35"></th>
+                        <td class="crypto-name">BNB</td>
+                        <p class="bnb-last" hidden>0</p>
+                        <td class="crypto-price has-text-success bnb-price"></td>
+                        <td class="crypto-buy-btn"><button class="button is-warning"
+                                onclick=" buyCrypto(this)">Buy</button></td>
+                    </tr>
+
+                    <tr>
+                        <th class="crypto-logo"><img src="./assets/img/crypto/xrp.png" alt="4" width="35"></th>
+                        <td class="crypto-name">XRP</td>
+                        <p class="xrp-last" hidden>0</p>
+                        <td class="crypto-price has-text-success xrp-price"></td>
+                        <td class="crypto-buy-btn"><button class="button is-warning"
+                                onclick="buyCrypto(this)">Buy</button></td>
+                    </tr>
+
+                    <tr>
+                        <th class="crypto-logo"><img src="./assets/img/crypto/doge.png" alt="5" width="35"></th>
+                        <td class="crypto-name">DOGE</td>
+                        <p class="doge-last" hidden>0</p>
+                        <td class="crypto-price has-text-danger doge-price"></td>
+                        <td class="crypto-buy-btn"><button class="button is-warning"
+                                onclick="buyCrypto(this)">Buy</button></td>
+                    </tr>
+
+                    <tr>
+                        <th class="crypto-logo"><img src="./assets/img/crypto/trx.png" alt="6" width="35"></th>
+                        <td class="crypto-name">TRON</td>
+                        <p class="trx-last" hidden>0</p>
+                        <td class="crypto-price has-text-success trx-price"></td>
+                        <td class="crypto-buy-btn"><button class="button is-warning"
+                                onclick="buyCrypto(this)">Buy</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="modal" id="buy-crypto-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card" style="width: 90%;">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Buy Crypto</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field control has-icons-left">
+                    <div class="select is-rounded">
+                        <select name="" id="cryptoChoice" style="width: 100vw;">
+                            <option value="0">Choose a Company</option>
+                            <option value="1">Bitcoin</option>
+                            <option value="2">Ethernium</option>
+                            <option value="3">BNB</option>
+                            <option value="4">XRP</option>
+                            <option value="5">DOGE</option>
+                            <option value="6">TRON</option>
+                        </select>
+                    </div>
+                    <div class="icon is-small is-left">
+                        <i class="fa-solid fa-coin"></i>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="number" placeholder="Price" />
+                        <span class="icon is-small is-left">
+                            <i class="fa-dollar-sign fa-solid fa-list"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Quantity" disabled />
+                        <span class="icon is-small is-left">
+                            <i class="fa-duotone fa-solid fa-list"></i>
+                        </span>
+                    </p>
+                </div>
+
+            </section>
+            <footer class="modal-card-foot">
+                <div class="buttons">
+                    <button class="button is-success">Buy</button>
+                    <button class="button is-pulled-right">Cancel</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="modal" id="sell-crypto-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card" style="width: 90%;">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Sell Crypto</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field control has-icons-left">
+                    <div class="select is-rounded">
+                        <select name="" id="" style="width: 100vw;">
+                            <option value="0">Choose a coin</option>
+                            <option value="1">Bitcoin</option>
+                            <option value="2">Ethernium</option>
+                            <option value="3">BNB</option>
+                            <option value="3">XRP</option>
+                        </select>
+                    </div>
+                    <div class="icon is-small is-left">
+                        <i class="fa-solid fa-coin"></i>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Available" disabled value="" />
+                        <span class="icon is-small is-left">
+                            <i class="fa-th-large fa-solid fa-list"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="number" placeholder="Price" />
+                        <span class="icon is-small is-left">
+                            <i class="fa-dollar-sign fa-solid fa-list"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Quantity" disabled />
+                        <span class="icon is-small is-left">
+                            <i class="fa-duotone fa-solid fa-list"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        When Selling Coins, there will be a 4% transaction fees.
+                    </p>
+                </div>
+
+            </section>
+            <footer class="modal-card-foot">
+                <div class="buttons">
+                    <button class="button is-warning">Sell</button>
+                    <button class="button is-pulled-right">Cancel</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="modal" id="transfere-crypto-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card" style="width: 90%;">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Transfere Crypto</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field control has-icons-left">
+                    <div class="select is-rounded">
+                        <select name="" id="" style="width: 100vw;">
+                            <option value="0">Choose a coin</option>
+                            <option value="1">Bitcoin</option>
+                            <option value="2">Ethernium</option>
+                            <option value="3">BNB</option>
+                            <option value="3">XRP</option>
+                        </select>
+                    </div>
+                    <div class="icon is-small is-left">
+                        <i class="fa-solid fa-coin"></i>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Available" disabled value="" />
+                        <span class="icon is-small is-left">
+                            <i class="fa-th-large fa-solid fa-list"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="number" placeholder="Price" />
+                        <span class="icon is-small is-left">
+                            <i class="fa-dollar-sign fa-solid fa-list"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Quantity" disabled />
+                        <span class="icon is-small is-left">
+                            <i class="fa-duotone fa-solid fa-list"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field control has-icons-left">
+                    <div class="select is-rounded">
+                        <select name="" id="" style="width: 100vw;">
+                            <option value="0">Transfere to:</option>
+                            <option value="1">Angelo Khairallah</option>
+                            <option value="2">Eddy Badran</option>
+                            <option value="3">Joseph Karam</option>
+                            <option value="3">Theo Khalil</option>
+                        </select>
+                    </div>
+                    <div class="icon is-small is-left">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                </div>
+
+            </section>
+            <footer class="modal-card-foot">
+                <div class="buttons">
+                    <button class="button is-success">Transfere</button>
+                    <button class="button is-pulled-right">Cancel</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="modal" id="redeem-secret">
+        <div class="modal-background"></div>
+        <div class="modal-card" style="width: 90%;">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Redeem Secret Code</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Secret Code" />
+                        <span class="icon is-small is-left">
+                            <i class="fa-duotone fa-solid fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+
+            </section>
+            <footer class="modal-card-foot">
+                <div class="buttons">
+                    <button class="button is-success">Redeem</button>
+                    <button class="button is-pulled-right">Cancel</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="modal" id="register-game-entrance">
+        <div class="modal-background"></div>
+        <div class="modal-card" style="width: 90%;">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Register to enter a game</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+
+                <div class="field">
+                    <p>When you choose a company to play with, you won't be able to exit without the approval of the
+                        company owner.</p>
+                </div>
+
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <!-- <input class="input" type="text" placeholder="Secret Code" />
+                        <span class="icon is-small is-left">
+                            <i class="fa-duotone fa-solid fa-lock"></i>
+                        </span> -->
+                    <div class="select is-rounded">
+                        <select style="width: 100vw;">
+                            <option value="">Choose a Company</option>
+                            <option value="">Angelo Khairallah</option>
+                            <option value="">Eddy Badran</option>
+                            <option value="">Theo Khalil</option>
+                            <option value="">Joseph Karam</option>
+                            <option value="">Charbel Khairallah</option>
+                            <option value="">Marco</option>
+                        </select>
+                    </div>
+                    </p>
+                </div>
+
+            </section>
+            <footer class="modal-card-foot">
+                <div class="buttons">
+                    <button class="button is-link">Enter</button>
+                    <button class="button is-pulled-right">Cancel</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="./assets/js/bulma.navbar.js"></script>
+    <script src="./assets/js/bulma.modal.js"></script>
+    <script src="./assets/js/index-prices.js"></script>
+    <script src="./assets/js/index-buy-modal.js"></script>
+
+    <script>
+
+        var currBal = document.getElementsByClassName("current-bal")[0]
+
+        currBal.innerHTML = "$" + truncateNumber(9999.99, 2);
+
+    </script>
+
+</body>
+
+</html>
